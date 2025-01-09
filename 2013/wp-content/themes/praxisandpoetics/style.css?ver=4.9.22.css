@@ -1,0 +1,780 @@
+/*
+Theme Name: Praxis and Poetics
+Description: Theme for Research through Design and DPPI websites. Controlled automagically through the theme!
+Author: Louise Taylor <a href="http://twitter.com/sugaredeggs">@sugaredeggs</a> (design) & Vicky Teinaki <a href="http://twitter.com/vickytnz">@vickytnz</a> (development)
+Template: twentytwelve
+Version: 1.1 
+Text Domain: praxisandpoetics
+*/
+
+@import url("../twentytwelve/style.css");
+
+@import url(http://fonts.googleapis.com/css?family=Karla:400,400italic,700italic,700); 
+/*
+
+Body: 12px (18px line spacing) #333333
+
+
+Body links: Underline #EE4037
+
+H1: Bold 28px #1DA4D2
+H2: Bold 18px #1DA4D2
+H3: Bold 14px #333333
+
+Nav active: Bold 15px #FFF 
+Nav inactive: Bold 11px #FFF
+
+Footer: Regular 13px #9CDAEE
+Footer link: Bold 13px underlined #FFF
+
+
+Red #EE4037 (e.g. hyperlinks)
+Pale Red #FCDBDB (e.g. feature box)
+Dark Blue #00799E (e.g. text headings and box shadow)
+Mid Blue #1DA4D2 (e.g. page background)
+Pale Blue #90D6EB (e.g. feature box)
+Palest Blue #CBEFF7 (e.g. table cells)
+Dark Green #498940 (e.g. text headings and box shadow)
+Mid Green #72B959 (e.g. page background)
+Pale Green #C5E1B6 (e.g. feature box)
+Palest Green #E3EFDC (e.g. table cells)
+Pale Yellow #FBE8BA (e.g. feature box)
+Dark Grey #333333 (e.g. body text)
+*/
+
+body, body.custom-font-enabled, body.error404 .widecolumn span.h3 {
+	font-family: 'Karla', sans-serif;
+}
+
+a, a:link, footer a , footer a:link {
+	color: #EE4037;
+	text-decoration: none;
+}
+
+h1, h1 a, h2, h2 a, h3, h3 a {
+	font-weight: bold;
+	color: #1DA4D2;
+}
+
+.entry-header .entry-title {
+	font-weight: bold;
+}
+
+h3, h3 a {
+	color: #333333;
+}
+
+.main-navigation ul {
+	border: none !important;
+}
+
+.main-navigation li a {
+	color: white;
+	text-transform: none;
+}
+
+.logo a {
+	overflow: hidden;
+	text-indent: -1000rem;
+	display: block;
+	float: left;
+	width: 345px;
+	height: 160px;
+	background: url(images/practice-poetics.png) no-repeat top left;
+}
+
+#masthead {
+	padding-bottom: 0;
+}
+
+#page {
+	position: relative;
+	z-index: 100;
+	margin-top: -3rem;
+	margin-bottom: 0;
+}
+
+.entry-content p {
+	margin: 0 0 0.8rem;
+	line-height: 1.6rem;
+}
+
+.entry-header, .entry-content h3, .comment-content h3, .entry-content h2, .entry-content ol, .comment-content ol, .entry-content ul, .comment-content ul, .mu_register ul {
+	margin-bottom: 1rem;
+	margin-top: 0;
+}
+
+.site-header h2 {
+	font-weight: normal;
+	font-size: 1.2rem;
+	color: #00799E;
+}
+
+.entry-content p a, .entry-content td a {
+	text-decoration: underline;
+}
+
+.entry-content img, .fixed-widget img, .front-widget img {
+	background: none;
+	border: none;
+	box-shadow: none;	
+}
+
+.site-content article {
+	border: none;
+		word-wrap: normal;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	hyphens: none;
+}
+
+.entry-content h3 + ul {
+	margin-top: -1rem; /*Combat big margin */
+}
+
+/*************************************/
+/*WIDGETS*/
+
+/*Fixed widgets */
+
+.fixed-widget, .front-widget {
+	padding: 1rem;
+	z-index: 200;
+	position: relative;
+	background-color: #FBE8BA;
+  -webkit-box-shadow: 1px 1px 1px 1px #00799e;
+          box-shadow: 1px 1px 1px 1px #00799e;
+
+}
+
+.fixed-widget img, .front-widget img {
+	margin-top: -6rem;
+}
+
+.fixed-widget h3, .front-widget h3,  .front-widget h3 a {
+	text-transform: none;
+	color: #00799E;
+	font-weight: bold;
+	font-size: 1.2rem;
+	text-decoration: none;
+}
+
+.fixed-widget p, .fixed-widget h3 {
+	margin-bottom: 0 !important;
+}
+
+.left-widget h3 {
+	margin-left: 5rem;
+}
+
+.left-widget h3, .left-widget .widget_sp_image-description {
+	text-align: right;
+}
+
+/*Footer widget*/
+#colophon {
+background-color: #1DA4D2;
+	border-top: none;
+padding-top: 0;
+
+margin: 0 auto;
+padding-top: 0.5rem !important;
+
+}
+
+#colophon .site-info {
+clear: both;
+font-size: 1.1rem;
+text-align: center;
+color: #9CDAEE;
+margin: 0 2.5rem;
+}
+
+#colophon .site-info a {
+	color: white;
+}
+
+#front-footer-widget {
+	clear: both;
+	max-width: 60rem;
+	margin: 0 auto;
+}
+
+#colophon .site-info a:hover {
+	color: #00799E;
+}
+#widget_sp_image-3 {
+background-color: #90D6EB;
+}
+
+
+.widget img, img.featured-image {
+	border-radius: 0;
+	box-shadow: none;
+}
+
+#front-footer-widget .widget {
+margin: 2%;
+width: 42%;
+float: left;
+min-height: 10rem;
+
+}
+
+.front-widget#widget_sp_image-6 {
+	background: #90D6EB;
+}
+
+.front-widget h3 {
+	font-size: 1.5rem;
+}
+
+#twitter-2 h3, #twitter-tracker-2 h3 {
+	display: block;
+	float: left;
+	background: url(images/large-firework.gif) no-repeat;
+	margin-left: -1rem;
+	height: 9.3rem;
+	margin-top: -5rem;
+	padding-left: 7rem;
+	position: absolute;
+	width: 15rem;
+	padding-top: 5rem;
+}
+
+#twitter-2 ul.tweets, #twitter-tracker-2 ol.tweets, #twitter-2 ul, #twitter-2 .follow-button {
+	margin-top: 3rem;
+	margin-left: 6rem;
+}
+
+#twitter-2 .follow-button {
+	margin-top: 0;
+margin-bottom: 0;
+}
+
+.site-researcht #twitter-2 h3 {
+	margin-top: -7rem;
+padding-top: 4rem;
+}
+
+#twitter-tracker-2 .avatar, #twitter-tracker-2 .info {
+       display:none;
+}
+
+/*Table*/
+table.programme caption {
+	background: #EE4037;
+	color: white;
+	margin: 0;
+	padding: 1rem;
+}
+table.programme {
+border: 1px solid #ccc;
+}
+
+table.programme td {
+	background: #CBEFF7;
+	padding: 1rem;
+}
+
+table.programme time, table.programme .break time  {
+	color: #1DA4D2;
+	font-size: 1.2rem;
+	font-weight: normal;
+}
+
+table.programme td.break {
+	background: #FBE8BA;
+	padding: 0.5rem 1rem;
+	text-align: center;
+	font-size: 0.9rem !important;
+	color: #1DA4D2;
+	font-weight: bold;
+}
+table.programme td.break time {
+	font-size: 0.9rem !important;
+
+}
+
+table.programme tr.keynote td {
+	background: white;
+}
+
+table.programme h3 {
+	font-weight: bold;
+	color: #00799E;
+	margin: 0;
+	line-height: 1.4rem;
+}
+table.programme p {
+	margin: 0;
+}
+
+table.programme span {
+	color: #1DA4D2;
+}
+
+#secondary .widget_simpleimage {
+	margin-bottom: 0;
+}
+
+.site-header h1 a, .site-header h2 a {
+	font-weight: normal;
+}
+
+.site-header h1 a:hover, .site-header h2 a:hover {
+	color: #1DA4D2;
+}
+
+.site-designing  .site-header h1 a:hover, .site-designing  .site-header h2 a:hover, #colophon .site-info a:hover {
+	color: #CC9F69;
+}
+
+
+.site-designing .page-committee .alignleft { /*Should work on both sites as they are committee pages*/
+	clear: left;
+	margin-top: 0;
+}
+
+#secondary {
+	display: none;
+	visibility: hidden !important;
+}
+
+.home #secondary  {
+	display: block;
+	visibility: visible !important;
+}
+
+/* Add new user theming */
+body.error404 #content.widecolumn {
+	margin-bottom:  5.142857143rem;
+}
+
+body.error404 .widecolumn p.lead-in {
+	line-height: 1.4rem;
+margin-top: 1rem;
+}
+
+body.error404 .widecolumn span.h3 {
+	padding: 0;
+	font-size: 1rem; 
+}
+
+body.error404 #signup-welcome {
+	line-height: 1.4rem;
+	margin: 1rem 0;
+}
+img.left-hang {  /*Set up for hanging image on home*/
+	margin: 0;
+}
+
+
+/************************************/
+
+/* Media query CSS begins */
+
+
+@media screen and (max-width: 600px) {
+	#masthead {
+		clear:both;
+		padding-top: 1rem; 
+
+	}
+	#site-navigation, .logo a  {
+	clear: both;
+		float: none;
+}
+ .logo a {
+	 /*width: 100%;
+	 overflow: hidden;
+	 background-position: center top; */
+	 height: 8rem;
+float: none;
+background-size: contain;
+margin: 0 25%;
+width: 50%;
+overflow: hidden;
+background-position: center top;
+
+	}
+	#site-navigation {
+		margin-top: 0;
+	}
+#footer-widgets {
+	margin: 0 2rem !important;
+	width: auto !important;
+}
+
+#front-footer-widget {
+	margin-top: 2rem;
+}
+#footer-widgets .fixed-widget, #front-footer-widget .front-widget {	
+	float:none !important;
+	width: auto !important;
+}
+body.site-designing #secondary .widget {
+	float: none;
+	text-align: center; 
+}
+
+.site-header {
+	padding-bottom: 0;
+	text-align: center;
+}
+
+.site-header h1, .site-header h2 {
+text-align: center;
+	font-size: 1.1rem;
+display: inline;
+
+}
+.site-content article {
+	margin-bottom: 0;
+}
+}
+
+
+@media screen and (max-width: 959px){
+#masthead {
+	background-color: #1DA4D2;
+	}
+body.site-designing #masthead {
+	background-color: white;
+}
+}
+
+@media screen and (min-width: 600px) {
+	.site, #masthead {
+		margin: 0 auto;
+		max-width: 960px;
+		max-width: 68.571428571rem;
+		/* max-width:  48.571428571rem; /* -10 *2 for the padding */
+		overflow: hidden;
+	}
+	
+	
+	body.site-designing .main-navigation li {
+		margin: 0 1rem 0 0;
+	}
+	#masthead {
+		max-width: 78.571428571rem; /*site + 10 for the overflow */
+	}
+	
+	#main {
+		 /*max-width:  40rem;  Lots of padding for images etc */
+		 margin: 0 auto;
+	}
+	.site-title {
+		clear: none;
+	}
+	#site-navigation {
+		float: right;
+	}
+	
+	body.site-designing .entry-header .entry-title {
+		font-size: 2.0rem !important;
+	}
+	.site-content {
+		/*margin-left: 14rem;
+		float: left;
+		max-width: 40rem;*/
+		width: auto;
+margin: auto;
+float: none;
+
+		}
+	#secondary {
+		right: 0;
+bottom: 0;
+/*position: absolute;*/
+float: right;
+width: 14rem;
+	}
+}
+
+@media screen and (max-width: 899px) {
+
+	.featured-image {
+		margin: 0 auto 2rem;
+		display: block;
+		float: none;
+		clear: both;
+	}
+	#secondary {
+		margin: 0 auto;
+		max-width: 40rem;
+		float: none;
+		width: auto;
+	}
+	#secondary .widget {
+		float: left;
+		margin: 0 1rem;
+	}
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+	#site-navigation {
+		max-width: 40%;
+		margin-bottom: 5rem; /*Accounting for page lift up on the page div*/
+	}
+	
+	#site-navigation ul {
+		text-align: right;
+		}
+}
+
+@media screen and (min-width: 900px) {
+	#site-navigation {
+		margin-top: 5rem;
+	}
+	#secondary {
+	position: absolute;
+left: 2rem;
+bottom: 0;
+float: left;
+width: 14rem;
+}
+.featured-image {
+	position: absolute;
+	right: 2rem;
+	bottom: 2rem;
+}
+
+body, body.custom-background-empty {
+		background-color: #1DA4D2;
+	}
+		.site-content {
+		max-width: 42rem;
+	}
+/*Custom for RtD site and images on front */
+.site-researcht.home .featured-image {
+	right: 4rem;
+	top: 10rem;
+}
+img.left-hang {
+	margin: -2.5rem 0 0 -9rem; /*Floats to left*/
+}
+
+
+
+}
+
+
+
+
+
+/* Minimum width of 960 pixels. */
+@media screen and (min-width: 960px) {
+	html, body.custom-background-empty {
+		background-color: #1DA4D2;
+		background: #1DA4D2 url(images/spanner.gif) no-repeat 50% 20px;
+	}
+	
+	body.site-designing #page {
+		border: 1px solid #E7C088;
+	}
+	
+	body.site-designing .main-navigation ul {
+		margin-right: 1.8rem;
+	}
+
+	
+	body .site, body.custom-background-empty .site,  body.custom-background-white .site {
+		padding: 0 40px;
+		padding: 0 2.857142857rem; /*  original */
+		/* padding: 0 12.857142857rem; */
+		margin-top: 48px;
+		margin-top: 3.428571429rem;
+		margin-bottom: 48px;
+		margin-bottom: 3.428571429rem;
+		box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+	}
+}
+
+@media screen and (max-width: 1119px) {
+
+#footer-widgets {
+	
+	width: 100%;
+	float:none;
+	max-width: 40rem;
+	margin: 0 auto;
+}
+#footer-widgets .fixed-widget {	
+margin: 2%;
+margin-top: 2rem;
+float: left;
+width: 40%;
+}
+}
+
+@media screen and (min-width: 1120px) {
+	#footer-widgets .fixed-widget {
+		
+		top: 25rem;
+		position: fixed;
+		width: 18rem;
+	}
+	#footer-widgets .fixed-widget.left-widget {
+		left: 0; 
+	}
+	#footer-widgets .fixed-widget.right-widget {
+		right: 0;
+		}
+}
+
+
+/**Stuff targeting just the DPPI site, with body.site-designing */
+/* 
+Red Brown #993300 (e.g. hyperlinks)
+Yellow Brown #9C5A16 (e.g. table header row)
+Dark Blue #00799E (e.g. text headings and menu items)
+Pale Blue #90D6EB (e.g. feature box)
+Palest Blue #CBEFF7 (e.g. table cells)
+Pale Brown #E7C088 (e.g. content box border)
+Pale Yellow #FBE8BA (e.g. feature box)
+Palest Yellow #FCF8F0 (e.g. programme box)
+Dark Grey #333333 (e.g. body text)
+Pale Grey #EDEDED (e.g. content box shadow)
+
+*/
+
+body.site-designing #page {
+	border-top: 1px solid #E7C088;
+	border-bottom: 1px solid #E7C088;
+}
+
+
+body.site-designing .logo a {
+	background-image: url(images/dppi-logo.png);
+}
+
+body.site-designing, body.site-designing #colophon {
+	background-color: white;
+}
+html.site-designing, body.site-designing {
+background: white url(images/robot-wide.png) no-repeat 50% 20px;
+}
+
+body.site-designing a {
+	color: #993300;
+}
+
+body.site-designing .main-navigation li a {
+	font-size: 1rem;
+	color: #00799E;
+}
+
+body.site-designing .main-navigation li a:hover {
+	color: #333;
+}
+
+body.site-designing .site-header h1 a {
+	color: black;
+}
+
+body.site-designing h2, body.site-designing h2 a,  
+body.site-designing h3,
+body.site-designing h3 a {
+	color: #00799E;
+}
+
+body.site-designing h1 {
+	color: #1DA4D2;
+}
+
+body.site-designing .site-header h2 {
+font-size: 1.6rem; /*was 1.4rem/
+color: #CC9F69;
+}
+
+body.site-designing .entry-content p, body.site-designing .entry-content td {
+	font-size: 1.3rem; /*was 1.1rem*/
+}
+
+body.site-designing #colophon .site-info {
+	color: #ccc;
+}
+
+body.site-designing #colophon .site-info a {
+	color: #6e6e6e;
+}
+body.site-designing .front-widget, body.site-designing .fixed-widget {
+	border: 1px solid #E7C088;
+	background: #FBE8BA;
+	-webkit-box-shadow: 1px 1px 1px 1px #EDEDED;
+box-shadow: 1px 1px 1px 1px #EDEDED;
+}
+
+body.site-designing .front-widget.widget_sp_image {
+	background: #CBEFF7;
+	border-color: #90D6EB ;
+}
+body.site-designing #twitter-2, body.site-designing #twitter-tracker-2 {
+	background: #FBE8BA;
+}
+
+body.site-designing #widget_sp_image-5 {
+	background: #90D6EB;
+}
+
+body.site-designing #twitter-2 h3, body.site-designing #twitter-tracker-2 h3 {
+	background: url(images/iphone.png) no-repeat;
+	margin-left: -0.5rem;
+	margin-top: -2rem;
+	padding-top: 2rem;
+}
+
+body.site-designing table.programme td {
+	color: black;
+}
+
+body.site-designing table.programme time, body.site-designing  table.programme td.break , body.site-designing table.programme .break time {
+color: #00799E;
+}
+
+body.site-designing table.programme td {
+	background-color: #CBEFF7;
+}
+
+
+table.programme tr.keynote td {
+	background-color: #FCF8F0;
+}
+
+
+body.site-designing table.programme td.break {
+background: #FBE8BA;
+}
+
+body.site-designing table.programme td em {
+	font-style: normal;
+	color: #333;
+}
+
+body.site-designing table.programme td strong {
+	font-style: normal;
+	color: #00799E;
+}
+
+body.site-designing table.programme caption {
+	background-color: #9C5A16;
+}
+
+body.site-designing #widget_sp_image-3, body.site-researcht #widget_sp_image-7  {
+	background-color: #FCDBDB; /*Pink for salmon*/
+}
+
+body.site-designing  #front-footer-widget .widget {
+      min-height: 12rem;
+}
+
+body.site-designing  #front-footer-widget .widget_sp_image {
+     font-size: 1.1rem;
+}
+
+body.site-researcht .widget_twitter li:first-child +li, body.site-researcht .widget_twitter li:first-child +li +li {
+	display: none; /*Hack for caching error*/
+}

@@ -1,0 +1,44 @@
+
+p.social{
+	border:none;
+}
+@media only screen 
+and (min-width : 414px) 
+and (max-width : 736px) {
+.item{
+	border:none;
+	}
+.bodytext-trans-wrap{
+	border:none;
+	margin:0;
+}
+p img, .bodytext-trans-wrap img{
+	margin:0 5px;
+    width:calc(100% -10px);
+    padding: 0 0 10px 0;
+}
+
+.rule{
+    margin-left: 5px;
+    height: 1px;
+    width: calc(100% - 10px);
+	}
+
+p {
+	border:none;
+}
+* {
+	border:none;
+}
+p {
+	border:none;
+}
+}
+
+@media only screen  
+and (min-width : 275px) 
+and (max-width : 413px) { 
+.item{
+border:none;
+	}
+	}

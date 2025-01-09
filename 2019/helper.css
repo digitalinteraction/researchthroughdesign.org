@@ -1,0 +1,9 @@
+span.bold-m- {
+	padding-bottom: 20px !important;
+}
+#gmap_canvas, .mapouter{
+	text-align:right;
+	min-height:400px;
+	height:auto;
+	width:calc(100% - 10px);
+}
