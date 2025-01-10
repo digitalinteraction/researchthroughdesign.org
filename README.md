@@ -1,0 +1,87 @@
+# static export of researchthroughdesign.org's various wordpress instances
+
+**docker-compose.yml**
+
+```yaml
+volumes:
+  mysql:
+
+services:
+  mysql:
+    image: mysql:5.7
+    platform: linux/amd64
+    restart: unless-stopped
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_USER: user
+      MYSQL_PASSWORD: secret
+    volumes:
+      - mysql:/var/lib/mysql
+  
+  app:
+    # image: php:5.6-apache
+    image: wordpress:php5.6-apache
+    platform: linux/amd64
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    volumes:
+      - ./public_html:/var/www/html/
+```
+
+- The various databases manually imported into that mysql container.
+- The wp-config.php files are updated to use the `mysql` container and its credentials
+- The databases themselves are updated (`wp_options`) to change the site and home URLs to reflect a `localhost:8080` deployment
+- The proxy (below) is used to access and rewrite any URLs on the page which reference itself absolutely
+- This allows the `wget` command to create a relative-url-based archive, that is now hosted on GitHub pages
+
+**proxy.js**
+
+```js
+#!/usr/bin/env deno run -A
+const contentTypes = [
+  'text/html'
+]
+
+const rewrites = [
+  'http://localhost:8080',
+  'http://www.researchthroughdesign.org',
+  'https://www.researchthroughdesign.org',
+  'http://researchthroughdesign.org',
+  'https://researchthroughdesign.org',
+]
+
+function process(text) {
+  let output = text
+  for (const url of rewrites) {
+    output = output.replaceAll(url, 'http://localhost:9000')
+  }
+  return output
+}
+
+Deno.serve({ port:9000 }, async request => {
+  const url = new URL('.' + new URL(request.url).pathname, 'http://localhost:8080')
+  const res = await fetch(url)
+  const type = res.headers.get('content-type')
+  if (contentTypes.every(t => !type?.includes(t))) return res
+  return new Response(process(await res.text()), {
+    headers: res.headers,
+    status: res.status
+  })
+})
+```
+
+**run.sh**
+
+```bash
+#!/usr/bin/env sh
+
+wget \
+  --mirror \
+  --convert-links \
+  --html-extension \
+  -o wget.log \
+  http://localhost:9000
+```
