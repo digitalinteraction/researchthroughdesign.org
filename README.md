@@ -1,4 +1,6 @@
-# static export of researchthroughdesign.org's various wordpress instances
+# researchthroughdesign.org
+
+A static export of researchthroughdesign.org's various wordpress instances.
 
 **docker-compose.yml**
 
@@ -81,7 +83,7 @@ Deno.serve({ port:9000 }, async request => {
 wget \
   --mirror \
   --convert-links \
-  --html-extension \
+  --adjust-extension \
   -o wget.log \
   http://localhost:9000
 ```
