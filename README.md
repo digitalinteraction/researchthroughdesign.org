@@ -34,6 +34,7 @@ services:
 ```
 
 - The various databases manually imported into that mysql container.
+  - You might need to `SET sql_mode = '';` because of WordPress' date format [link](https://tableplus.com/blog/2019/10/incorrect-date-value-0000-00-00-date-datetime.html)
 - The wp-config.php files are updated to use the `mysql` container and its credentials
 - The databases themselves are updated (`wp_options`) to change the site and home URLs to reflect a `localhost:8080` deployment
 - The proxy (below) is used to access and rewrite any URLs on the page which reference itself absolutely
