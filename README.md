@@ -49,7 +49,7 @@ const contentTypes = [
 ]
 
 const rewrites = [
-  'http://localhost:8080',
+  'https://rtd.openlab.dev',
   'http://www.researchthroughdesign.org',
   'https://www.researchthroughdesign.org',
   'http://researchthroughdesign.org',
@@ -59,13 +59,13 @@ const rewrites = [
 function process(text) {
   let output = text
   for (const url of rewrites) {
-    output = output.replaceAll(url, 'http://localhost:9000')
+    output = output.replaceAll(url, 'https://rtd.openlab.dev')
   }
   return output
 }
 
 Deno.serve({ port:9000 }, async request => {
-  const url = new URL('.' + new URL(request.url).pathname, 'http://localhost:8080')
+  const url = new URL('.' + new URL(request.url).pathname, 'https://rtd.openlab.dev')
   const res = await fetch(url)
   const type = res.headers.get('content-type')
   if (contentTypes.every(t => !type?.includes(t))) return res
@@ -86,5 +86,5 @@ wget \
   --convert-links \
   --adjust-extension \
   -o wget.log \
-  http://localhost:9000
+  https://rtd.openlab.dev
 ```
