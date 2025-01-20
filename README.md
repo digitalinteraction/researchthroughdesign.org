@@ -88,3 +88,8 @@ wget \
   -o wget.log \
   https://rtd.openlab.dev
 ```
+
+
+## notes
+
+- several pages in 2015 point to www.johnvines.eu which no longer exists
